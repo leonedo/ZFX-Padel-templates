@@ -742,7 +742,8 @@
       "ddd": 0,
       "ind": 5,
       "ty": 4,
-      "nm": "Marcador 4",
+      "nm": ".opacidad_saque_1",
+      "cl": "opacidad_saque_1",
       "parent": 16,
       "sr": 1,
       "ks": {
@@ -1049,7 +1050,8 @@
       "ddd": 0,
       "ind": 6,
       "ty": 4,
-      "nm": "Marcador 3",
+      "nm": ".opacidad_saque_2",
+      "cl": "opacidad_saque_2",
       "parent": 16,
       "sr": 1,
       "ks": {
