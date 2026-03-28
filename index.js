@@ -210,21 +210,22 @@ webcg.on('data', function (data) {
             if (anim.currentFrame !== 0 && updateAnimation) {
                 updateTiming = framesMilliseconds * (updateDelay + loopTiming)
                 if (anim.isPaused && isOn) {
+                    console.log("seeking and playing:1 " + set)
                     anim.goToAndPlay(`update${set}`, true)
                     if (!loopExternal) {
                         clearTimeout(loopRepeat);
                     }
 
                 } else {
-                    console.log("seeking and playing:3 " + set)
+                   
                         loopAnimation = false;
                         nextAnimation = `update${set}`
                 }
             } else if(!loopExternal && loopExits && anim.isPaused) {
-               console.log("seeking and playing:4 " + set)
+               
                 anim.goToAndPlay('loop', true)
             }
-console.log("seeking and playing:5 " + set)
+
             let imageElements = animContainer.getElementsByTagName("image");
             animElementsLength = anim.renderer.elements.length;
             console.log(resolve)
