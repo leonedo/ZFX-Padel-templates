@@ -211,7 +211,7 @@ webcg.on('data', function (data) {
                 updateTiming = framesMilliseconds * (updateDelay + loopTiming)
                 if (anim.isPaused && isOn) {
                     console.log("seeking and playing:1 " + set)
-                    anim.goToAndPlay(`update${set}`, true)
+                    anim.goToAndPlay(`update`, true)
                     if (!loopExternal) {
                         clearTimeout(loopRepeat);
                     }
@@ -219,7 +219,7 @@ webcg.on('data', function (data) {
                 } else {
                    
                         loopAnimation = false;
-                        nextAnimation = `update${set}`
+                        nextAnimation = `update`
                 }
             } else if(!loopExternal && loopExits && anim.isPaused) {
                
