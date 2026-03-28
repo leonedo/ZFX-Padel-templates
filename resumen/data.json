@@ -4853,8 +4853,8 @@
       "ddd": 0,
       "ind": 25,
       "ty": 5,
-      "nm": ".match_points_1",
-      "cl": "match_points_1",
+      "nm": ".match_points_2",
+      "cl": "match_points_2",
       "parent": 39,
       "sr": 1,
       "ks": {
@@ -5051,8 +5051,8 @@
       "ddd": 0,
       "ind": 26,
       "ty": 5,
-      "nm": ".gold_points_1",
-      "cl": "gold_points_1",
+      "nm": ".gold_points_2",
+      "cl": "gold_points_2",
       "parent": 40,
       "sr": 1,
       "ks": {
@@ -5651,8 +5651,8 @@
       "ddd": 0,
       "ind": 29,
       "ty": 5,
-      "nm": ".sets_1",
-      "cl": "sets_1",
+      "nm": ".sets_team_1",
+      "cl": "sets_team_1",
       "parent": 45,
       "sr": 1,
       "ks": {
@@ -5849,8 +5849,8 @@
       "ddd": 0,
       "ind": 30,
       "ty": 5,
-      "nm": ".sets_2",
-      "cl": "sets_2",
+      "nm": ".sets_team_2",
+      "cl": "sets_team_2",
       "parent": 45,
       "sr": 1,
       "ks": {
