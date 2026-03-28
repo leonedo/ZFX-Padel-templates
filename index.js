@@ -24,6 +24,8 @@ let updateDelay = 0;
 let nextAnimation;
 let imagesReplace = {};
 
+let set = "1";
+
 
 let animContainer = document.getElementById('bm');
 let loopContainer = document.getElementById('loop');
@@ -200,24 +202,29 @@ webcg.on('data', function (data) {
     if (key.toLowerCase().includes("opacidad")) {
         checkandupdate(key, data[key]);
     }
+ //   if (key.toLowerCase().includes("set_number")) {
+ //       set = data[key].text || data[key];
+ //   }
 }
-    animPromise.then(resolve => {
+    animPromise.then(resolve => { 
             if (anim.currentFrame !== 0 && updateAnimation) {
                 updateTiming = framesMilliseconds * (updateDelay + loopTiming)
                 if (anim.isPaused && isOn) {
-                    anim.goToAndPlay('update', true)
+                    anim.goToAndPlay(`update${set}`, true)
                     if (!loopExternal) {
                         clearTimeout(loopRepeat);
                     }
 
                 } else {
-                    loopAnimation = false;
-                    nextAnimation = 'update'
+                    console.log("seeking and playing:3 " + set)
+                        loopAnimation = false;
+                        nextAnimation = `update${set}`
                 }
             } else if(!loopExternal && loopExits && anim.isPaused) {
+               console.log("seeking and playing:4 " + set)
                 anim.goToAndPlay('loop', true)
             }
-
+console.log("seeking and playing:5 " + set)
             let imageElements = animContainer.getElementsByTagName("image");
             animElementsLength = anim.renderer.elements.length;
             console.log(resolve)
@@ -350,35 +357,42 @@ function itemExists(item) {
 
 //casparcg control
 
-webcg.on('entrada1', function () {
-    console.log('bola1')
-    anim.goToAndPlay('bola1', true);
+webcg.on('entrada_1', function () {
+    console.log('columna2')
+    anim.goToAndPlay('columna2', true);
+    set = "1"
 });
 
-webcg.on('entrada2', function () {
-    console.log('bola2')
-    anim.goToAndPlay('bola2', true);
+webcg.on('entrada_2', function () {
+    console.log('columna3')
+    anim.goToAndPlay('columna3', true);
+    set = "2"
 });
 
-webcg.on('entrada3', function () {
-    console.log('bola3')
-    anim.goToAndPlay('bola3', true);
+webcg.on('entrada_3', function () {
+    console.log('columna4')
+    anim.goToAndPlay('columna4', true);
+    set = "3"
 });
 
-webcg.on('entrada4', function () {
-    console.log('bola4')
-    anim.goToAndPlay('bola4', true);
+webcg.on('salida_1', function () {
+    console.log('salida1')
+    anim.goToAndPlay('salida1', true);
+    
 });
 
-webcg.on('entrada5', function () {
-    console.log('bola5')
-    anim.goToAndPlay('bola5', true);
+webcg.on('salida_2', function () {
+    console.log('salida2')
+    anim.goToAndPlay('salida2', true);
+   
 });
 
-webcg.on('entrada6', function () {
-    console.log('bola6')
-    anim.goToAndPlay('bola6', true);
+webcg.on('salida_3', function () {
+    console.log('salida3')
+    anim.goToAndPlay('salida3', true);
+    
 });
+
 
 
 webcg.on('startclock', function () {
