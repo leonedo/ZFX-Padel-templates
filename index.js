@@ -202,9 +202,9 @@ webcg.on('data', function (data) {
     if (key.toLowerCase().includes("opacidad")) {
         checkandupdate(key, data[key]);
     }
- //   if (key.toLowerCase().includes("set_number")) {
- //       set = data[key].text || data[key];
- //   }
+   if (key.toLowerCase().includes("jugador_")) {
+    data[key] = data[key].replace(/\s*\/\s*/g, "\r");
+}
 }
     animPromise.then(resolve => { 
             if (anim.currentFrame !== 0 && updateAnimation) {
